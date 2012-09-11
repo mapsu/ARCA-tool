@@ -39,7 +39,6 @@ import java.util.TreeSet;
  *
  * @author Eero Laukkanen
  */
-@PersistenceUnit(name = "userdb")
 @Entity(name = "user")
 public class User extends Model {
 

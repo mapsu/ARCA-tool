@@ -48,7 +48,6 @@ import java.util.TreeSet;
  *
  * @author Eero Laukkanen
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "rcacase")
 public class RCACase extends IdComparableModel {
 

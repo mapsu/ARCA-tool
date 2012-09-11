@@ -37,7 +37,6 @@ import java.util.*;
  *
  * @author Eero Laukkanen
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "cause")
 public class Cause extends LikableIdComparableModel {
 

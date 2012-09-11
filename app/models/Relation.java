@@ -33,7 +33,6 @@ import javax.persistence.*;
  * @author Eero Laukkanen
  * TODO Timestamp for update information, updating said timestamp to RCACase
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "relation")
 public class Relation extends IdComparableModel {
 

@@ -35,8 +35,6 @@ import java.util.Date;
  *
  * @author Eero Laukkanen
  */
-
-@PersistenceUnit(name = "maindb")
 @Entity(name = "correctioncomments")
 public class Comment extends IdComparableModel {
 
@@ -77,6 +75,16 @@ public class Comment extends IdComparableModel {
 	*/
 	@Lob
 	public String comment;
+
+	/**
+	 * This method is called when the rca case is created
+	 */
+	@PrePersist
+	protected void onCreate() {
+		Date current = new Date();
+		updated = current;
+		created = current;
+	}
 
 	/**
 	 * Creates a new comment. Timestamps (created, updated) are updated within the database.

@@ -1,8 +1,10 @@
 ARCA-tool.iml
+ARCA-tool.ipr
 logs
 test-result
 tmp
 modules
+db/h2
 .idea
 !.idea/copyright
 !.idea/runConfigurations
