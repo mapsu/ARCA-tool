@@ -39,7 +39,7 @@ import java.util.TreeSet;
  *
  * @author Eero Laukkanen
  */
-@Entity(name = "user")
+@Entity(name = "rcauser")
 public class User extends Model {
 
 	/**

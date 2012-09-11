@@ -99,7 +99,7 @@ public class RCACaseController extends Controller {
 	public static void getUsers(Long rcaCaseId) {
 		RCACase rcaCase = PublicRCACaseController.checkIfCurrentUserHasRightsForRCACase(rcaCaseId);
 		List<User> existingUsers =
-				User.find("Select u from user as u inner join u.caseIds as caseIds" + " where ? in caseIds",
+				User.find("Select u from rcauser as u inner join u.caseIds as caseIds" + " where ? in caseIds",
 				          rcaCaseId)
 				    .fetch();
 		List<Invitation> invitedUsers = Invitation

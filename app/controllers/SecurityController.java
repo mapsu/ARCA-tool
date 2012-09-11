@@ -25,6 +25,7 @@
 package controllers;
 
 import models.User;
+import org.apache.commons.lang.StringUtils;
 import play.Logger;
 import utils.EncodingUtils;
 
@@ -76,6 +77,10 @@ public class SecurityController extends Secure.Security {
 	 * @return
 	 */
 	public static User getCurrentUser() {
-		return User.find("byEmail", SecurityController.connected()).first();
+		String username = SecurityController.connected();
+		if (StringUtils.isBlank(username)) {
+			return null;
+		}
+		return User.find("byEmail", username).first();
 	}
 }

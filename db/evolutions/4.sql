@@ -6,38 +6,35 @@
 -- Table causelikes
 -- -----------------------------------------------------
 CREATE TABLE causelikes (
-  id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  causeId BIGINT(20) UNSIGNED NOT NULL,
-  userId BIGINT(20) UNSIGNED NOT NULL,
-  PRIMARY KEY (id),
-  INDEX fk_causelikes_causeId (causeId ASC),
-  INDEX fk_causelikes_userId (userId ASC));
+  id SERIAL NOT NULL,
+  causeId BIGINT NOT NULL,
+  userId BIGINT NOT NULL,
+  PRIMARY KEY (id)
+);
 
 -- -----------------------------------------------------
 -- Table correctionlikes
 -- -----------------------------------------------------
 CREATE TABLE correctionlikes (
-  id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  correctionId BIGINT(20) UNSIGNED NOT NULL,
-  userId BIGINT(20) UNSIGNED NOT NULL,
-  PRIMARY KEY (id),
-  INDEX fk_correctionlikes_correctionId (correctionId ASC),
-  INDEX fk_correctionlikes_userId (userId ASC));
+  id SERIAL NOT NULL,
+  correctionId BIGINT NOT NULL,
+  userId BIGINT NOT NULL,
+  PRIMARY KEY (id)
+);
 
 -- -----------------------------------------------------
 -- Table correctioncomments
 -- -----------------------------------------------------
 CREATE TABLE correctioncomments (
-  id BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT ,
-  correctionId BIGINT(20) UNSIGNED NOT NULL,
-  userId BIGINT(20) UNSIGNED NOT NULL,
+  id SERIAL NOT NULL ,
+  correctionId BIGINT NOT NULL,
+  userId BIGINT NOT NULL,
   comment TEXT NOT NULL,
-  updated DATETIME NOT NULL,
-  created DATETIME NOT NULL,
-  tag SMALLINT(3) DEFAULT '0',
-  PRIMARY KEY (id),
-  INDEX fk_correctioncomments_1 (correctionId ASC),
-  INDEX fk_correctioncomments_2 (userId ASC));
+  updated TIMESTAMP NOT NULL,
+  created TIMESTAMP NOT NULL,
+  tag INT DEFAULT '0',
+  PRIMARY KEY (id)
+);
 
 ALTER TABLE cause ADD COLUMN xCoordinate INT DEFAULT '100' NOT NULL;
 ALTER TABLE cause ADD COLUMN yCoordinate INT DEFAULT '100' NOT NULL;

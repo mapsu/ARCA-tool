@@ -2,8 +2,8 @@
 
 # --- !Ups
 
-ALTER TABLE cause ADD COLUMN statusValue SMALLINT(6) NOT NULL DEFAULT '1';
-ALTER TABLE correction ADD COLUMN statusValue SMALLINT(6) NOT NULL DEFAULT '1';
+ALTER TABLE cause ADD COLUMN statusValue INT NOT NULL DEFAULT '1';
+ALTER TABLE correction ADD COLUMN statusValue INT NOT NULL DEFAULT '1';
 
 # --- !Downs
 
