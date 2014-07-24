@@ -42,7 +42,6 @@ import java.util.TreeSet;
  *
  * @author Eero Laukkanen
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "correction")
 public class Correction extends LikableIdComparableModel {
 

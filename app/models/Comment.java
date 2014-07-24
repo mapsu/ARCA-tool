@@ -37,7 +37,6 @@ import java.util.Date;
  * @author Eero Laukkanen
  */
 
-@PersistenceUnit(name = "maindb")
 @Entity(name = "correctioncomments")
 public class Comment extends IdComparableModel {
 
