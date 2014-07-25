@@ -201,7 +201,7 @@ $(function() {
             ajaxRequest = $.get(arca.ajax.causesAndCorrections({
                     whatToShow:whatToShow,
                     selectedCases:selectedCases,
-                    allCases:allCases,
+                    allCases:allCases.toString(),
                     selectedCauseStatuses:selectedCauseStatuses,
                     selectedCorrectionStatuses:selectedCorrectionStatuses,
                     csvExport:'false'
@@ -235,7 +235,7 @@ $(function() {
              var csv = arca.ajax.causesAndCorrections({
                           whatToShow: whatToShow,
                           selectedCases: selectedCases,
-                          allCases: allCases,
+                          allCases: allCases.toString(),
                           selectedCauseStatuses: selectedCauseStatuses,
                           selectedCorrectionStatuses: selectedCorrectionStatuses,
                           csvExport: 'true'
