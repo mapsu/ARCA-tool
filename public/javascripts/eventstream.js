@@ -30,7 +30,7 @@
  */
 function readEventStream() {
     $.ajax({
-        url: arca.ajax.waitMessage({lastReceived: arca.lastReceived}),
+        url: arca.ajax.waitMessage({ lastReceived: arca.lastReceived.toString() }),
         dataType: 'json',
         success: function (events) {
             $(events).each(function () {
