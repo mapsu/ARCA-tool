@@ -30,8 +30,6 @@ import utils.IdComparableModel;
 import javax.persistence.*;
 import java.util.Date;
 
-
-@PersistenceUnit(name = "maindb")
 @Entity(name = "classification")
 public class Classification extends IdComparableModel {
 	/**

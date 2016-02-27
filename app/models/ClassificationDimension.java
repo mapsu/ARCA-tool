@@ -30,7 +30,6 @@ import utils.IdComparableModel;
 import javax.persistence.*;
 import java.util.List;
 
-@PersistenceUnit(name = "maindb")
 @Entity(name = "dimension")
 public class ClassificationDimension extends IdComparableModel {
 

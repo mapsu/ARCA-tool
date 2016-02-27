@@ -36,7 +36,6 @@ import java.util.List;
  * @author Eero Laukkanen
  * TODO Timestamp for update information, updating said timestamp to RCACase
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "relation")
 public class Relation extends IdComparableModel {
 
@@ -64,6 +63,7 @@ public class Relation extends IdComparableModel {
 		this.causeTo = causeTo;
 	}
 
+	@SuppressWarnings("unchecked")
 	public <T extends JPABase> T delete() {
 		this.causeFrom.causeRelations.remove(this);
 		this.causeTo.causeRelations.remove(this);

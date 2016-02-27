@@ -39,7 +39,6 @@ import java.util.List;
  * A representation of a child-parent classification relationship related to a cause - that is, a parent-child pair of
  * classifications.
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "classificationpair")
 public class ClassificationPair extends IdComparableModel {
 	@ManyToOne

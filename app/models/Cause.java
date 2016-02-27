@@ -39,7 +39,6 @@ import java.util.*;
  * @author Eero Laukkanen
  * @author AM Helin
  */
-@PersistenceUnit(name = "maindb")
 @Entity(name = "cause")
 public class Cause extends LikableIdComparableModel {
 
@@ -299,9 +298,7 @@ public class Cause extends LikableIdComparableModel {
 		Set<Cause> allCauses = this.getCauses();
 		Cause[] parents = this.getParents();
 		if(parents != null) {
-			for (int i = 0; i < parents.length; i++) {
-				allCauses.add(parents[i]);
-			}
+			Collections.addAll(allCauses, parents);
 		}
 		allCauses.add(this.rcaCase.problem);
 
@@ -370,8 +367,8 @@ public class Cause extends LikableIdComparableModel {
 	public boolean isChildOf(Cause cause) {
 		Cause[] parents = this.getParents();
 		if (parents != null) {
-			for (int i = 0; i < parents.length; i++) {
-				if (parents[i].equals(cause)) {
+			for (Cause parent : parents) {
+				if (parent.equals(cause)) {
 					return true;
 				}
 			}
